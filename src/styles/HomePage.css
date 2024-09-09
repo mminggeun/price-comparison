@@ -1,0 +1,8 @@
+/* HomePage.css */
+.image-container {
+    display: flex;
+    justify-content: flex-end; /* 이미지를 오른쪽으로 배치 */
+    padding-right: 183px;
+    margin-top: -46px;
+  }
+  
