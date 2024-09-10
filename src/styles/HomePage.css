@@ -1,8 +1,33 @@
-/* HomePage.css */
 .image-container {
-    display: flex;
-    justify-content: flex-end; /* 이미지를 오른쪽으로 배치 */
-    padding-right: 183px;
-    margin-top: -46px;
+  display: flex;
+  justify-content: flex-end; /* 기본적으로 이미지를 오른쪽으로 배치 */
+  padding: 0 183px; /* 좌우 동일한 패딩 설정 */
+  margin-top: -55px;
+}
+
+/* 반응형 디자인 */
+/* 화면 너비가 1200px 이하일 때 */
+@media (max-width: 1200px) {
+  .image-container {
+    padding: 0 100px; /* 좌우 패딩을 동일하게 줄임 */
+    margin-top: -30px; /* 상단 여백을 줄임 */
   }
-  
+}
+
+/* 화면 너비가 900px 이하일 때 */
+@media (max-width: 900px) {
+  .image-container {
+    justify-content: center; /* 작은 화면에서는 이미지를 중앙으로 배치 */
+    padding: 0 50px; /* 좌우 패딩을 더 줄임 */
+    margin-top: -20px; /* 상단 여백을 더 줄임 */
+  }
+}
+
+/* 화면 너비가 600px 이하일 때 */
+@media (max-width: 600px) {
+  .image-container {
+    justify-content: center; /* 이미지 중앙 정렬 */
+    padding: 0 20px; /* 좌우 동일한 패딩으로 좁게 설정 */
+    margin-top: 0; /* 상단 여백 제거 */
+  }
+}

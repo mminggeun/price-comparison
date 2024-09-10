@@ -1,36 +1,97 @@
-/* Navbar.css */
 nav {
-    position: relative;
-    z-index: 10;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: white;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
 
 nav ul {
-    display: flex;
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: -30px;
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: -35px;
 }
 
 nav li {
-    margin-right: 150px;
-    padding-top: 60px;
-    font-size: 18px;
-    font-weight: 350;
+  margin-right: 150px;
+  padding-top: 60px;
+  font-size: 18px;
+  font-weight: 350;
 }
 
 nav li a {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    align-items: center;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
 }
 
 .menu-icon {
-    width: 340px;
-    height: auto;
-    margin-left: 70px;
-    margin-right: 178px;
-    margin-top: -13px;
+  width: 340px;
+  height: auto;
+  margin-left: 70px;
+  margin-right: 178px;
+  margin-top: -17px;
+}
+
+/* 반응형 디자인 추가 */
+/* 화면 너비가 1200px 이하일 때 */
+@media (max-width: 1200px) {
+  nav li {
+    margin-right: 100px; /* 네비게이션 간격 줄이기 */
+    padding-top: 50px;
+    font-size: 16px; /* 폰트 크기 줄이기 */
+  }
+
+  .menu-icon {
+    width: 280px; /* 아이콘 크기 줄이기 */
+    margin-left: 50px;
+    margin-right: 100px;
+  }
+}
+
+/* 화면 너비가 900px 이하일 때 */
+@media (max-width: 900px) {
+  nav ul {
+    flex-direction: column; /* 메뉴를 수직으로 쌓기 */
+    align-items: center;
+    margin-top: -10px; /* 위쪽 마진 제거 */
+  }
+
+  nav li {
+    margin-right: 0;
+    margin-bottom:20px;
+    padding-top: 20px; /* 여백을 더 줄임 */
+    font-size: 16px;
+  }
+
+  .menu-icon {
+    width: 250px; /* 아이콘 크기 더 줄이기 */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+  }
+}
+
+/* 화면 너비가 600px 이하일 때 */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column; /* 작은 화면에서는 메뉴를 세로로 쌓기 */
+    margin-top: 0;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  nav li {
+    font-size: 14px; /* 더 작은 글자 크기 */
+    margin-right: 0; /* 마진 제거 */
+    padding-top: 15px;
+  }
+
+  .menu-icon {
+    width: 200px; /* 아이콘 더 작게 */
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+  }
 }
