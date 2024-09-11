@@ -1,0 +1,116 @@
+.signup-container {
+    max-width: 500px;
+    margin: 100px auto;
+    margin-bottom: 70px;
+    padding: 60px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+  }
+
+  .login-image {
+    margin-left:-20px;
+  }
+  
+  .form-group {
+    width:80%;
+    margin-left:45px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .signup-button {
+    width:84%;
+    padding: 10px;
+    margin-right: -25px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    background-color: #427fd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .signup-button:disabled {
+    background-color: #ccc;
+  }
+
+  /* 체크박스와 텍스트를 같은 줄에 균일하게 배치 */
+  .terms-container .terms1  {
+    display: flex;
+    align-items: center; /* 체크박스와 텍스트를 세로축 가운데 정렬 */
+    margin-bottom: 20px;
+    margin-top: -5px;
+  }
+  
+  .terms-container .terms1 label {
+    margin-left: 3px; /* 텍스트와 체크박스 사이에 간격을 줌 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    font-size: 14px;
+  }
+  
+  .terms-container .terms1 input {
+    margin-right: -35px; /* 체크박스와 텍스트 사이의 간격 */
+  }
+
+   
+  /* 체크박스와 텍스트를 같은 줄에 균일하게 배치 */
+  .terms-container .terms2  {
+    display: flex;
+    align-items: center; /* 체크박스와 텍스트를 세로축 가운데 정렬 */
+    margin-bottom: 20px;
+    margin-top: -5px;
+  }
+  
+  .terms-container .terms2 label {
+    margin-left: -14px; /* 텍스트와 체크박스 사이에 간격을 줌 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    font-size: 14px;
+  }
+  
+  .terms-container .terms2 input {
+    margin-right: -50px; /* 체크박스와 텍스트 사이의 간격 */
+  }
+
+  /* 이용약관 스크롤 박스 */
+.terms-box {
+    width: 80%;
+    max-height: 100px; /* 박스의 최대 높이를 설정 */
+    overflow-y: scroll; /* 세로 스크롤 추가 */
+    border: 1px solid #ccc; /* 테두리 추가 */
+    padding: 10px;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9; /* 약간의 배경색 추가 */
+  }
+
+  .field-label {
+    text-align: left;
+    font-size: 14px;
+    font-weight:200px;
+    color: rgb(69, 66, 66);
+    margin-left:5px;
+  }
+  
+  

@@ -1,0 +1,26 @@
+/* 전체 컨테이너 스타일 */
+.terms-container2 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #f9f9f9; /* 배경 색 */
+    border-radius: 10px; /* 둥근 모서리 */
+    font-family: 'Arial', sans-serif; /* 기본 폰트 */
+    color: #333; /* 글자 색 */
+    line-height: 1.6; /* 줄 간격 */
+  }
+  
+  /* 제목 스타일 */
+  .terms-container2 h3 {
+    font-size: 15px; /* 제목 크기 */
+    font-weight: bold;
+    color: #2c3e50; /* 제목 색상 */
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* 일반 텍스트 스타일 */
+  .terms-container2 p {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }

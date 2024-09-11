@@ -1,99 +1,117 @@
 .searchproduct-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: -100px;
-    margin-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: -100px;
+  margin-left: 30px;
+  opacity: 0; /* 처음엔 보이지 않도록 설정 */
+  animation: fadeIn 1s ease-in-out forwards; /* 페이드 인 애니메이션 */
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: -50px;
+}
+
+.title-image {
+  width: 850px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  margin-left: -230px;
+  opacity: 0; /* 처음엔 보이지 않도록 설정 */
+  animation: fadeIn 1.2s ease-in-out forwards 0.2s; /* 0.2초 후에 나타남 */
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 400px;
+  margin-top: -150px;
+  margin-left: 10px;
+  opacity: 0; /* 처음엔 보이지 않도록 설정 */
+  animation: fadeIn 1.2s ease-in-out forwards 0.4s; /* 0.4초 후에 나타남 */
+}
+
+.search-input {
+  padding: 30px 0;
+  font-size: 22px;
+  width: 110%; /* 기본적으로 100% 너비 */
+  border-radius: 1px;
+  border: none;
+  border-bottom: 4px solid black; /* 하단에 굵은 밑줄 */
+  margin-bottom: 20px;
+  padding-right: 40px;
+}
+
+.search-input::placeholder {
+  color: grey;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.search-input:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+.search-icon {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-70%);
+  width: 48px;
+  height: 48px;
+}
+
+.suggestions-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 100px;
+  opacity: 0; /* 처음엔 보이지 않도록 설정 */
+  animation: fadeIn 1.4s ease-in-out forwards 0.6s; /* 0.6초 후에 나타남 */
+}
+
+.suggestion {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.suggestion:hover {
+  background-color: #427fd4;
+  color: #f0f0f0;
+}
+
+.right-column {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.background-image {
+  margin-top: 60px;
+  margin-left: 10px;
+  width: 900px;
+  object-fit: contain;
+  opacity: 0; /* 처음엔 보이지 않도록 설정 */
+  animation: fadeIn 1.5s ease-in-out forwards 0.7s; /* 0.7초 후에 나타남 */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* 아래에서 위로 등장 */
   }
-  
-  .left-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: -50px;
+  to {
+    opacity: 1;
+    transform: translateY(0); /* 제자리로 */
   }
-  
-  .title-image {
-    width: 850px;
-    margin-top: -20px;
-    margin-bottom: 20px;
-    margin-left: -230px;
-  }
-  
-  .search-input-wrapper {
-    position: relative;
-    width: 400px;
-    margin-top: -150px;
-    margin-left: 10px;
-  }
-  
-  .search-input {
-    padding: 30px 0;
-    font-size: 22px;
-    width: 110%; /* 기본적으로 100% 너비 */
-    border-radius: 1px;
-    border: none;
-    border-bottom: 4px solid black; /* 하단에 굵은 밑줄 */
-    margin-bottom: 20px;
-    padding-right: 40px;
-  }
-  
-  .search-input::placeholder {
-    color: grey;
-    font-size: 22px;
-    font-weight: bold;
-  }
-  
-  .search-input:focus {
-    outline: none;
-    background-color: transparent;
-  }
-  
-  .search-icon {
-    position: absolute;
-    right: -80px;
-    top: 50%;
-    transform: translateY(-70%);
-    width: 48px;
-    height: 48px;
-  }
-  
-  .suggestions-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 100px;
-  }
-  
-  .suggestion {
-    background-color: #f0f0f0;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    white-space: nowrap;
-  }
-  
-  .suggestion:hover {
-    background-color: #427fd4;
-    color: #f0f0f0;
-  }
-  
-  .right-column {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .background-image {
-    margin-top: 60px;
-    margin-left: 10px;
-    width: 900px;
-    object-fit: contain;
-  }
-  
-  
-   
+}
