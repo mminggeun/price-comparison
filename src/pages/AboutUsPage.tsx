@@ -1,5 +1,5 @@
 import React from "react";
-import aboutusImage from "../assets/aboutus4.png"; // 이미지를 import
+import aboutusImage from "../assets/aboutus.png"; // 이미지를 import
 import '../styles/AboutUsPage.css';
 
 const AboutUsPage: React.FC = () => {

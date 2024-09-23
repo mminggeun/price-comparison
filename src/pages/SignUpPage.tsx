@@ -106,7 +106,7 @@ const SignUpPage: React.FC = () => {
           </div>
 
           <button
-            className="signup-button"
+            className="signup-button1"
             disabled={!(isTermsChecked && isPrivacyChecked)} // 두 체크박스 모두 선택되면 버튼 활성화
             onClick={handleNextClick}
           >
@@ -129,43 +129,43 @@ const SignUpPage: React.FC = () => {
         >
           {({ isSubmitting }) => (
             <Form>
-              <div className="form-group">
+              <div className="form-group-su">
                 <div className="field-label">아이디</div>
                 <Field name="username" type="text" className="input-field" placeholder="8~12 자리의 영문, 숫자만 가능"/>
                 <ErrorMessage name="username" component="div" className="error-message" />
               </div>
 
-              <div className="form-group">
+              <div className="form-group-su">
                 <div className="field-label">비밀번호</div>
                 <Field name="password" type="password" className="input-field" placeholder="8~15 자리의 영문자, 숫자, 특수문자 3가지 조합"/>
                 <ErrorMessage name="password" component="div" className="error-message" />
               </div>
 
-              <div className="form-group">
+              <div className="form-group-su">
                 <div className="field-label">비밀번호 확인</div>
                 <Field name="confirmPassword" type="password" className="input-field" />
                 <ErrorMessage name="confirmPassword" component="div" className="error-message" />
               </div>
 
-              <div className="form-group">
+              <div className="form-group-su">
                 <div className="field-label">이메일</div>
                 <Field name="email" type="email" className="input-field" placeholder="example@naver.com"/>
                 <ErrorMessage name="email" component="div" className="error-message" />
               </div>
 
-              <div className="form-group">
+              <div className="form-group-su">
                 <div className="field-label">이름</div>
                 <Field name="name" type="text" className="input-field" />
                 <ErrorMessage name="name" component="div" className="error-message" />
               </div>
 
-              <div className="form-group">
+              <div className="form-group-su">
                 <div className="field-label">전화번호</div>
                 <Field name="phoneNumber" type="text" className="input-field" placeholder="01012345678"/>
                 <ErrorMessage name="phoneNumber" component="div" className="error-message" />
               </div>
 
-              <button type="submit" className="signup-button" disabled={isSubmitting}>
+              <button type="submit" className="signup-button2" disabled={isSubmitting}>
                 회원가입
               </button>
             </Form>

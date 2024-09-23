@@ -1,0 +1,66 @@
+.dashboard-container {
+    max-width: 800px;
+    margin: 100px auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 60px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+  }
+
+  .items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column; /* 수직 정렬 */
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px; /* item.name과 item.price 사이의 간격 */
+}
+
+.item-details p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.desired-price-container {
+  display: flex;
+  align-items: center; /* 희망가격 부분을 가로로 배치 */
+  margin-top: 10px;
+}
+
+.desired-price-container label {
+  font-size: 16px;
+}
+
+.desired-price-input {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 16px;
+  width: 100px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

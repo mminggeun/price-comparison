@@ -2,8 +2,9 @@
     max-width: 500px;
     margin: 100px auto;
     margin-bottom: 70px;
-    padding: 60px;
+    padding: 40px;
     border: 1px solid #ccc;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     text-align: center;
@@ -13,7 +14,7 @@
     margin-left:-20px;
   }
   
-  .form-group {
+  .form-group-su {
     width:80%;
     margin-left:45px;
     margin-bottom: 20px;
@@ -39,12 +40,25 @@
     margin-top: 5px;
   }
   
-  .signup-button {
+  .signup-button1 {
     width:84%;
     padding: 10px;
-    margin-right: -25px;
     margin-top: 10px;
     margin-bottom: 50px;
+    margin-right:-23px;
+    background-color: #427fd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .signup-button2 {
+    width:80%;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-right:-2px;
     background-color: #427fd4;
     color: white;
     border: none;
@@ -52,7 +66,7 @@
     cursor: pointer;
   }
   
-  .signup-button:disabled {
+  .signup-button1:disabled {
     background-color: #ccc;
   }
 
@@ -65,13 +79,13 @@
   }
   
   .terms-container .terms1 label {
-    margin-left: 3px; /* 텍스트와 체크박스 사이에 간격을 줌 */
+    margin-left: -10px; /* 텍스트와 체크박스 사이에 간격을 줌 */
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */
     font-size: 14px;
   }
   
   .terms-container .terms1 input {
-    margin-right: -35px; /* 체크박스와 텍스트 사이의 간격 */
+    margin-right: -45px; /* 체크박스와 텍스트 사이의 간격 */
   }
 
    
@@ -84,13 +98,13 @@
   }
   
   .terms-container .terms2 label {
-    margin-left: -14px; /* 텍스트와 체크박스 사이에 간격을 줌 */
+    margin-left: -28px; /* 텍스트와 체크박스 사이에 간격을 줌 */
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */
     font-size: 14px;
   }
   
   .terms-container .terms2 input {
-    margin-right: -50px; /* 체크박스와 텍스트 사이의 간격 */
+    margin-right: -65px; /* 체크박스와 텍스트 사이의 간격 */
   }
 
   /* 이용약관 스크롤 박스 */

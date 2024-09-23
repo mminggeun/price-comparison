@@ -36,7 +36,7 @@
 .search-input {
   padding: 30px 0;
   font-size: 22px;
-  width: 110%; /* 기본적으로 100% 너비 */
+  width: 120%; /* 기본적으로 100% 너비 */
   border-radius: 1px;
   border: none;
   border-bottom: 4px solid black; /* 하단에 굵은 밑줄 */

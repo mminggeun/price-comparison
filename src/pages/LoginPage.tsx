@@ -33,14 +33,20 @@ const LoginPage: React.FC = () => {
 
   // 카카오 로그인 핸들러
   const handleKakaoLogin = () => {
-    // 여기에 카카오 로그인 로직 추가 (Kakao SDK 또는 REST API 사용)
-    window.location.href = "https://kauth.kakao.com/oauth/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code";
+    const clientId = "c1cf3f3adfcae6267cfe6f3afb78b583"; // 카카오 개발자 콘솔에서 발급받은 클라이언트 ID
+    const redirectUri = "http://localhost:3000/auth/kakao"; // 카카오 개발자 페이지에 설정한 Redirect URI
+
+    // 카카오 로그인 페이지로 리다이렉션
+    window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`;
   };
 
   // 네이버 로그인 핸들러
   const handleNaverLogin = () => {
-    // 여기에 네이버 로그인 로직 추가 (Naver SDK 또는 REST API 사용)
-    window.location.href = "https://nid.naver.com/oauth2.0/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code";
+    const clientId = "Q70cMQb9uvxhQwuOPy5C"; // 네이버 개발자 콘솔에서 발급받은 클라이언트 ID
+    const redirectUri = "http://localhost:3000/auth/naver"; // 네이버 개발자 페이지에 설정한 Redirect URI
+
+    // 네이버 로그인 페이지로 리다이렉션
+    window.location.href = `https://nid.naver.com/oauth2.0/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`;
   };
 
   // 홈으로 이동하는 함수
@@ -99,9 +105,9 @@ const LoginPage: React.FC = () => {
 
         {/* 아이디 찾기, 비밀번호 찾기, 회원가입 추가 */}
         <div className="additional-links">
-          <a href="/find-username" className="link">아이디 찾기</a>
+          <a href="/findid" className="link">아이디 찾기</a>
           <span className="separator">|</span>
-          <a href="/find-password" className="link">비밀번호 찾기</a>
+          <a href="/findpwd" className="link">비밀번호 찾기</a>
           <span className="separator">|</span>
           <a href="/signup" className="link">회원가입</a>
         </div>
