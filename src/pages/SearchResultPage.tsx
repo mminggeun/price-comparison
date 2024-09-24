@@ -65,48 +65,48 @@ const SearchResultPage: React.FC = () => {
 
         const mockAmazonResults = [
           {
-            id: 1,
-            name: `AmazonProduct 1 for ${searchQuery}`,
+            id: 21,
+            name: `AmazonProduct 21 for ${searchQuery}`,
             price: "$45",
             imageUrl: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTHb5vHxKPexPgvBsPlGVIS7ot1am0t1L0sz-dESXVXhGQyvZP6wIbCy9HA8aLijpe7GrBPkAUa73Y62jvJAL2CMUjnuvnwX3aGNedDZBdIwD-mMJRUJOUSfomQiUKQx73p1s31GpA5tw&usqp=CAc",
           },
           {
-            id: 2,
-            name: `Amazon Product 2 for ${searchQuery}`,
+            id: 22,
+            name: `Amazon Product 22 for ${searchQuery}`,
             price: "$35",
             imageUrl: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRQcnQGy5-jy-Nv0ByfRvpNS673jddURCOL7G1N6fVsCVf-cg8zcIHYNOv40n71UEf0E9iSbazNTBtUH7zBs9P4tZ0bXZXM8fZwBUWHNuk58molS0AgdbYOhhaXZe8jopW2vTXn5y-PHw&usqp=CAc",
           },
           {
-            id: 3,
-            name: `AasfasfzonProduct 3 for ${searchQuery}`,
+            id: 23,
+            name: `AasfasfzonProduct 23 for ${searchQuery}`,
             price: "$45",
             imageUrl: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTHb5vHxKPexPgvBsPlGVIS7ot1am0t1L0sz-dESXVXhGQyvZP6wIbCy9HA8aLijpe7GrBPkAUa73Y62jvJAL2CMUjnuvnwX3aGNedDZBdIwD-mMJRUJOUSfomQiUKQx73p1s31GpA5tw&usqp=CAc",
           },
           {
-            id: 4,
-            name: `Amazon Product 4 for ${searchQuery}`,
-            price: "$35",
-            imageUrl: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRQcnQGy5-jy-Nv0ByfRvpNS673jddURCOL7G1N6fVsCVf-cg8zcIHYNOv40n71UEf0E9iSbazNTBtUH7zBs9P4tZ0bXZXM8fZwBUWHNuk58molS0AgdbYOhhaXZe8jopW2vTXn5y-PHw&usqp=CAc",
-          }, {
-            id: 5,
-            name: `AmazonProducasfasfasfaft 5 for ${searchQuery}`,
-            price: "$45",
-            imageUrl: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTHb5vHxKPexPgvBsPlGVIS7ot1am0t1L0sz-dESXVXhGQyvZP6wIbCy9HA8aLijpe7GrBPkAUa73Y62jvJAL2CMUjnuvnwX3aGNedDZBdIwD-mMJRUJOUSfomQiUKQx73p1s31GpA5tw&usqp=CAc",
-          },
-          {
-            id: 6,
-            name: `Amazon Product 6 for ${searchQuery}`,
+            id: 24,
+            name: `Amazon Product 24 for ${searchQuery}`,
             price: "$35",
             imageUrl: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRQcnQGy5-jy-Nv0ByfRvpNS673jddURCOL7G1N6fVsCVf-cg8zcIHYNOv40n71UEf0E9iSbazNTBtUH7zBs9P4tZ0bXZXM8fZwBUWHNuk58molS0AgdbYOhhaXZe8jopW2vTXn5y-PHw&usqp=CAc",
           }, {
-            id: 7,
-            name: `AmazonProduct 7 for ${searchQuery}`,
+            id: 25,
+            name: `AmazonProducasfasfasfaft 25 for ${searchQuery}`,
             price: "$45",
             imageUrl: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTHb5vHxKPexPgvBsPlGVIS7ot1am0t1L0sz-dESXVXhGQyvZP6wIbCy9HA8aLijpe7GrBPkAUa73Y62jvJAL2CMUjnuvnwX3aGNedDZBdIwD-mMJRUJOUSfomQiUKQx73p1s31GpA5tw&usqp=CAc",
           },
           {
-            id: 8,
-            name: `Amazon Prodasfasfasuct 8 for ${searchQuery}`,
+            id: 26,
+            name: `Amazon Product 26 for ${searchQuery}`,
+            price: "$35",
+            imageUrl: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRQcnQGy5-jy-Nv0ByfRvpNS673jddURCOL7G1N6fVsCVf-cg8zcIHYNOv40n71UEf0E9iSbazNTBtUH7zBs9P4tZ0bXZXM8fZwBUWHNuk58molS0AgdbYOhhaXZe8jopW2vTXn5y-PHw&usqp=CAc",
+          }, {
+            id: 27,
+            name: `AmazonProduct 27 for ${searchQuery}`,
+            price: "$45",
+            imageUrl: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTHb5vHxKPexPgvBsPlGVIS7ot1am0t1L0sz-dESXVXhGQyvZP6wIbCy9HA8aLijpe7GrBPkAUa73Y62jvJAL2CMUjnuvnwX3aGNedDZBdIwD-mMJRUJOUSfomQiUKQx73p1s31GpA5tw&usqp=CAc",
+          },
+          {
+            id: 28,
+            name: `Amazon Prodasfasfasuct 28 for ${searchQuery}`,
             price: "$35",
             imageUrl: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRQcnQGy5-jy-Nv0ByfRvpNS673jddURCOL7G1N6fVsCVf-cg8zcIHYNOv40n71UEf0E9iSbazNTBtUH7zBs9P4tZ0bXZXM8fZwBUWHNuk58molS0AgdbYOhhaXZe8jopW2vTXn5y-PHw&usqp=CAc",
           }
@@ -156,8 +156,11 @@ const SearchResultPage: React.FC = () => {
     <div className="searchresult-container">
       <div className="header-container">
         <h1>검색 결과: {searchQuery}</h1>
-        <small className="header-small-text">체크박스를 누르고 희망가격 <br />
-        설정하기 버튼을 누르면 희망가격이 <br />됬을때 알람을 보내드려요!</small>
+        <small className="header-small-text">
+          <span className="highlight">체크박스를 누르고 희망가격</span><br />
+          <span className="highlight">설정하기 버튼을 누르면 희망가격이</span><br />
+          <span className="highlight">됬을때 알람을 보내드려요!</span>
+        </small>
       </div>
 
       {loading ? (
@@ -174,7 +177,7 @@ const SearchResultPage: React.FC = () => {
                     <img src={item.imageUrl} alt={item.name} className="result-image" />
                     <div className="result-info">
                       <p>{item.name}</p>
-                      <p>가격: {item.price}</p>
+                      <p>가격 : {item.price}</p>
                       <input
                         type="checkbox"
                         className="result-checkbox"

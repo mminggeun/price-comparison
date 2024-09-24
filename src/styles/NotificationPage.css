@@ -1,0 +1,54 @@
+.notification-container {
+    max-width: 800px;
+    margin: 100px auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 60px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+.notification-header h1{
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.notification-item {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .notification-item-image {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .notification-item p {
+    width: 300px; /* 각 텍스트의 넓이를 제한 */
+  }
+  
+  .notification-item p:nth-child(2) {
+    width: 290px; /* 상품명에 대한 넓이 */
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight:500;
+    color: #444;
+  }
+  
+  .notification-item p:nth-child(3),
+  .notification-item p:nth-child(4) {
+    width: 200px; /* 가격 정보에 대한 넓이 */
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight:500;
+    color: #444;
+  }
+

@@ -10,10 +10,24 @@ const SearchProductPage: React.FC = () => {
   const navigate = useNavigate();
 
   // 검색 버튼 클릭 핸들러
-  const handleSearch = () => {
-    if (searchQuery.trim()) {
+  const handleSearch = (query: string) => {
+    const searchTerm = query.trim() ? query : searchQuery;
+    if (searchTerm) {
       // 검색어가 있으면 대시보드 페이지로 이동
-      navigate(`/searchresult?query=${searchQuery}`);
+      navigate(`/searchresult?query=${searchTerm}`);
+    }
+  };
+
+  // Suggestion 클릭 핸들러
+  const handleSuggestionClick = (suggestion: string) => {
+    setSearchQuery(suggestion); // 선택한 추천 항목으로 검색어 설정
+    handleSearch(suggestion);   // 바로 검색 실행
+  };
+
+  // 엔터 키 입력 핸들러
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSearch(searchQuery);
     }
   };
 
@@ -31,23 +45,25 @@ const SearchProductPage: React.FC = () => {
             className="search-input" 
             value={searchQuery} 
             onChange={(e) => setSearchQuery(e.target.value)} // 검색어 입력 핸들러 추가
+            onKeyDown={handleKeyDown} // 엔터 키 입력 핸들러 추가
           />
           <img 
             src={lenzeicon} 
             alt="Search Icon" 
             className="search-icon" 
-            onClick={handleSearch} // 아이콘 클릭 시 검색 실행
+            onClick={() => handleSearch(searchQuery)} // 아이콘 클릭 시 검색 실행
             style={{ cursor: 'pointer' }} // 클릭 가능한 상태로 보이게 스타일 추가
           />
         </div>
 
         <div className="suggestions-container">
-          <div className="suggestion">#iphone se11</div>
-          <div className="suggestion">#apple watch</div>
-          <div className="suggestion">#PIXPRO AZ425</div>
-          <div className="suggestion">#AirPods 3rd</div>
-          <div className="suggestion">#lenova LOQ 15.6</div>
-          <div className="suggestion">#galaxy s24</div>
+          {/* 각 suggestion을 클릭할 수 있게 설정 */}
+          <div className="suggestion" onClick={() => handleSuggestionClick('iphone se11')}>#iphone se11</div>
+          <div className="suggestion" onClick={() => handleSuggestionClick('apple watch')}>#apple watch</div>
+          <div className="suggestion" onClick={() => handleSuggestionClick('PIXPRO AZ425')}>#PIXPRO AZ425</div>
+          <div className="suggestion" onClick={() => handleSuggestionClick('AirPods 3rd')}>#AirPods 3rd</div>
+          <div className="suggestion" onClick={() => handleSuggestionClick('lenova LOQ 15.6')}>#lenova LOQ 15.6</div>
+          <div className="suggestion" onClick={() => handleSuggestionClick('galaxy s24')}>#galaxy s24</div>
         </div>
       </div>
 

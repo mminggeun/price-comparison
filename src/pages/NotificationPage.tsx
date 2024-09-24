@@ -1,25 +1,35 @@
-import React, { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom"; // 페이지 이동을 위한 useNavigate 훅
-import '../styles/AboutUsPage.css';
+import React, { useEffect, useState } from 'react';
+import '../styles/NotificationPage.css';
 
 const NotificationPage: React.FC = () => {
-  const navigate = useNavigate();
-  const hasAlerted = useRef(false); // 경고창이 뜬 상태를 추적하는 ref
+  const [notificationItems, setNotificationItems] = useState<any[]>([]);
 
-  // 로그인 여부 확인
+  // 컴포넌트가 마운트될 때 localStorage에서 데이터 불러오기
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn'); // 로그인 여부 확인 (예: localStorage에서 로그인 상태 확인)
-    
-    if (!isLoggedIn && !hasAlerted.current) { 
-      alert('로그인 먼저 해주세요.'); // 경고창 띄우기
-      hasAlerted.current = true; // 경고창이 뜬 상태로 설정
-      navigate('/login'); // 로그인 페이지로 리다이렉트
+    const storedItems = localStorage.getItem('notificationItems');
+    if (storedItems) {
+      setNotificationItems(JSON.parse(storedItems));
     }
-  }, [navigate]);
+  }, []);
 
   return (
-    <div className="aboutus-container">
-      알림함
+    <div className="notification-container">
+      <div className="notification-header">
+        <h1>알림 설정된 상품</h1>
+      </div>
+      {notificationItems.length > 0 ? (
+        notificationItems.map((item: any) => (
+          <div key={item.id} className="notification-item">
+            {/* 이미지 렌더링 */}
+            <img src={item.imageUrl} alt={item.name} className="notification-item-image" />
+            <p>상품명 : {item.name}</p>
+            <p>현재 가격 : {item.currentPrice}</p>
+            <p>희망 알림 가격 : {item.desiredPrice}</p>
+          </div>
+        ))
+      ) : (
+        <p>알림 설정된 상품이 없습니다.</p>
+      )}
     </div>
   );
 };
