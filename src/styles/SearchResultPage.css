@@ -42,7 +42,7 @@
   font-weight: 600;
   line-height: 2; /* 줄 간격 설정 */
   color: #444; /* 텍스트 색상 */
-  max-width: 250px; /* 텍스트가 두 줄로 보이도록 최대 너비 설정 */
+  width: 260px;
   margin-right: 5px; /* 오른쪽에 여백 추가 */
   margin-top: 50px;
   margin-bottom: -10px;

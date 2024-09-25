@@ -34,21 +34,67 @@
   .notification-item p {
     width: 300px; /* 각 텍스트의 넓이를 제한 */
   }
+
+  .notification-price p{
+    margin-right:15px;
+    font-size: 14px;
+    line-height: 1;
+    font-weight:500;
+    color: #444;
+  }
   
-  .notification-item p:nth-child(2) {
+  .notification-item-name{
     width: 290px; /* 상품명에 대한 넓이 */
     font-size: 16px;
     line-height: 1.5;
     font-weight:500;
     color: #444;
   }
-  
-  .notification-item p:nth-child(3),
-  .notification-item p:nth-child(4) {
-    width: 200px; /* 가격 정보에 대한 넓이 */
-    font-size: 16px;
-    line-height: 1.5;
-    font-weight:500;
-    color: #444;
-  }
 
+.view-graph-button {
+  width: 11.6%;
+  padding: 5px;
+  background-color: #427fd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 모달 배경 오버레이 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 모달 콘텐츠 */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 800px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+  background-color: #0a0a0a;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.close-button:hover {
+  background-color: #666869;
+}
