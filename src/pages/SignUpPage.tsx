@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // 페이지 이동을 위한 훅
+import { useNavigate } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { useMutation } from 'react-query';
+import axios from 'axios';
+import { AxiosError } from 'axios';
 import loginpage from "../assets/loginpage.png";
-import '../styles/SignUpPage.css'; // 스타일 파일 import
-import { TermsAndConditions } from "../services/terms1"; // 약관 파일 
-import { TermsAndConditions2 } from "../services/terms2"; // 약관 파일 import
+import '../styles/SignUpPage.css';
+import { TermsAndConditions } from "../services/terms1";
+import { TermsAndConditions2 } from "../services/terms2";
 
 // 회원가입 폼 유효성 검사 스키마
 const validationSchema = Yup.object({
@@ -22,21 +25,19 @@ const validationSchema = Yup.object({
   phoneNumber: Yup.string()
     .matches(/^[0-9]{10,11}$/, '유효한 전화번호를 입력해주세요.')
     .required('전화번호를 입력해주세요.'),
-  name: Yup.string()
-    .required('이름을 입력해주세요.')
+  name: Yup.string().required('이름을 입력해주세요.')
 });
 
 const SignUpPage: React.FC = () => {
-  const navigate = useNavigate(); // 페이지 이동을 위한 훅
-  const [isTermsChecked, setIsTermsChecked] = useState(false); // 이용약관 체크 상태
-  const [isPrivacyChecked, setIsPrivacyChecked] = useState(false); // 개인정보 처리방침 체크 상태
-  const [isTermsAccepted, setIsTermsAccepted] = useState(false); // 최종 체크 상태
+  const navigate = useNavigate();
+  const [isTermsChecked, setIsTermsChecked] = useState(false);
+  const [isPrivacyChecked, setIsPrivacyChecked] = useState(false);
+  const [isTermsAccepted, setIsTermsAccepted] = useState(false);
 
   const handleImageClick = () => {
-    navigate("/"); // 홈 경로로 이동
+    navigate("/");
   };
 
-  // 체크박스 핸들러
   const handleTermsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsTermsChecked(e.target.checked);
   };
@@ -45,17 +46,59 @@ const SignUpPage: React.FC = () => {
     setIsPrivacyChecked(e.target.checked);
   };
 
-  // "다음" 버튼 클릭 시 회원가입 폼을 띄우기 위한 함수
   const handleNextClick = () => {
     if (isTermsChecked && isPrivacyChecked) {
       setIsTermsAccepted(true);
     }
   };
 
-  // 회원가입 폼 제출 처리 함수
+  // 회원가입 mutation 정의
+  const registerMutation = useMutation(
+    async (UserReq: { username: string; email: string; password: string; phoneNumber: string; name: string; role: string;}) => { 
+      const response = await axios.post('http://18.209.20.212:8080/api/users/register', UserReq, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      return response.data;
+    },
+    {
+      onSuccess: () => {
+        alert('회원가입이 성공적으로 완료되었습니다. 이제 로그인하세요.');
+        navigate('/login');
+      },
+      onError: (error: unknown) => { // error 타입을 unknown으로 지정
+        if (error instanceof AxiosError) { // AxiosError 타입인지 확인
+          if (error.response) {
+            console.error('Error response:', error.response.data);
+            alert('회원가입 실패: ' + error.response.data.message);
+          } else {
+            console.error('Error registering user:', error.message); // 에러 메시지 출력
+            alert('회원가입 실패: ' + error.message);
+          }
+        } else {
+          console.error('Unknown error:', error); // 예상하지 못한 에러 처리
+          alert('회원가입 실패: 알 수 없는 오류가 발생했습니다.');
+        }
+      },
+    }
+  );
+
+  // 폼 제출 핸들러
   const handleSubmit = (values: any) => {
-    console.log(values); // 폼 제출 시 처리 로직 (예: 서버 요청)
-    navigate('/'); // 회원가입 성공 후 리디렉션
+    const UserReq = {
+      username: values.username,
+      email: values.email,
+      password: values.password,
+      phoneNumber: values.phoneNumber,
+      name: values.name,
+      role: 'USER'
+    };
+
+    console.log(UserReq);
+
+    // 회원가입 mutation 호출
+    registerMutation.mutate(UserReq);
   };
 
   return (
@@ -64,19 +107,16 @@ const SignUpPage: React.FC = () => {
         src={loginpage}
         alt="Login Page"
         className="login-image"
-        onClick={handleImageClick} // 클릭 핸들러 추가
-        style={{ cursor: 'pointer' }} // 클릭 가능한 상태로 보이게 스타일링
+        onClick={handleImageClick}
+        style={{ cursor: 'pointer' }}
       />
       {!isTermsAccepted ? (
         <div className="terms-container">
           <h3>이용약관 동의</h3>
           <p>회원가입을 하기 위해 아래 약관을 읽고 동의해주세요.</p>
-
-          {/* 약관 컴포넌트 삽입 */}
           <div className="terms-box">
             <TermsAndConditions />
           </div>
-
           <div className="terms1">
             <label>
               <input
@@ -88,11 +128,9 @@ const SignUpPage: React.FC = () => {
               이용약관에 동의합니다.
             </label>
           </div>
-        
           <div className="terms-box">
             <TermsAndConditions2 />
           </div>
-
           <div className="terms2">
             <label>
               <input
@@ -104,17 +142,15 @@ const SignUpPage: React.FC = () => {
               개인정보 처리방침에 동의합니다.
             </label>
           </div>
-
           <button
             className="signup-button1"
-            disabled={!(isTermsChecked && isPrivacyChecked)} // 두 체크박스 모두 선택되면 버튼 활성화
+            disabled={!(isTermsChecked && isPrivacyChecked)}
             onClick={handleNextClick}
           >
             다음
           </button>
         </div>
       ) : (
-        // 회원가입 폼
         <Formik
           initialValues={{
             username: '',
@@ -130,41 +166,35 @@ const SignUpPage: React.FC = () => {
           {({ isSubmitting }) => (
             <Form>
               <div className="form-group-su">
+                <div className="field-label">이름</div>
+                <Field name="name" type="text" className="input-field" />
+                <ErrorMessage name="name" component="div" className="error-message" />
+              </div>
+              <div className="form-group-su">
                 <div className="field-label">아이디</div>
-                <Field name="username" type="text" className="input-field" placeholder="8~12 자리의 영문, 숫자만 가능"/>
+                <Field name="username" type="text" className="input-field" />
                 <ErrorMessage name="username" component="div" className="error-message" />
               </div>
-
               <div className="form-group-su">
                 <div className="field-label">비밀번호</div>
-                <Field name="password" type="password" className="input-field" placeholder="8~15 자리의 영문자, 숫자, 특수문자 3가지 조합"/>
+                <Field name="password" type="password" className="input-field" />
                 <ErrorMessage name="password" component="div" className="error-message" />
               </div>
-
               <div className="form-group-su">
                 <div className="field-label">비밀번호 확인</div>
                 <Field name="confirmPassword" type="password" className="input-field" />
                 <ErrorMessage name="confirmPassword" component="div" className="error-message" />
               </div>
-
               <div className="form-group-su">
                 <div className="field-label">이메일</div>
-                <Field name="email" type="email" className="input-field" placeholder="example@naver.com"/>
+                <Field name="email" type="email" className="input-field" />
                 <ErrorMessage name="email" component="div" className="error-message" />
               </div>
-
-              <div className="form-group-su">
-                <div className="field-label">이름</div>
-                <Field name="name" type="text" className="input-field" />
-                <ErrorMessage name="name" component="div" className="error-message" />
-              </div>
-
               <div className="form-group-su">
                 <div className="field-label">전화번호</div>
-                <Field name="phoneNumber" type="text" className="input-field" placeholder="01012345678"/>
+                <Field name="phoneNumber" type="text" className="input-field" />
                 <ErrorMessage name="phoneNumber" component="div" className="error-message" />
               </div>
-
               <button type="submit" className="signup-button2" disabled={isSubmitting}>
                 회원가입
               </button>

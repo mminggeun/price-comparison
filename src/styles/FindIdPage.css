@@ -1,6 +1,6 @@
 .find-id-page {
     max-width: 400px;
-    height:60vh;
+    height:72vh;
     margin: 100px auto;
     margin-bottom: 100px;
     padding: 60px;
@@ -31,14 +31,33 @@
     margin-top: 10px;
   }
 
-   .findidname, .findidemail {
+   .findidname, .findidphoneNumber, .findidcertificationNumber {
     text-align: left;
     font-size: 13px;
     font-weight:lighter;
     color:#a6a2a2;
     padding: 5px;
    }
+
+   .phone-number-container {
+    display: flex;
+    align-items: center;
+  }
   
+  .certification-button-fi {
+    margin-left: 10px;
+    margin-right:-5px;
+    margin-top: -9px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 1px solid #427fd4;
+    background-color: white; /* 원하는 색상으로 변경 */
+    color: #427fd4;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap; 
+  }
+ 
   input {
     width: 65%;
     padding: 13px;
